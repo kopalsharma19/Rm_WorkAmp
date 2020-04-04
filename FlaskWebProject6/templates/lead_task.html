@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('lead_show')}}">
+                <h4 class="menu-opt">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('expenditure')}}">
+                <h4 class="menu-opt">EXPENSES</h4>
+            </a>
+        </div>
+    </div>
+    <h3 class="header">Tasks Details</h3>
+    <div class="cards-list">
+
+
+        <div class="row">
+                <div class="item complete" id="pic1">
+                    <div class="categories">Tasks Completed</div>
+                    <div class="amount" id="taskno">{{done_task}}</div>
+                </div>
+                <div class="item pending" id="pic2">
+                    <div class="categories">Total Pending</div>
+                    <div class="amount">{{notdone_task}}</div>
+                </div>
+        </div>
+
+        <h3 class="inference-header">
+            Most frequented task raised
+        </h3>
+        <div class="inference-container">
+            {%for t in max_act_count %}
+            <p class="inference-detail">{{t["_id"]}}</p>
+            <p>{{t["count"]}}</p>
+            {% endfor %}
+
+        </div>
+
+
+        <h3 class="inference-header">
+            Most delays occurred
+        </h3>
+        <div class="inference-container">
+            <p class="inference-detail"></p>
+            <p class="inference">5 days</p>
+        </div>
+
+        <h3 class="inference-header">
+            Area most affected
+        </h3>
+        <div class="inference-container">
+            {% for t in max_category_count %}
+            <p class="inference-detail">{{ t["_id"] }}</p>
+            <p>{{ t["count"] }}</p>
+            {% endfor %}
+
+        </div>
+
+        <div class= "buttons">
+            <div class="button" id="export">
+                <div class="button-text" id="export-text">
+                    <a href="F:\Meethi Folder\INTERNSHIPS\WorkAmp\Daily Activities.csv" download>Export Excel</a>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

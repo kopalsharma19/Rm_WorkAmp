@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="menu-select">
+            <a href="{{url_for('admin')}}">
+                <h4 class="menu-opt" id="selected">TASKS TODAY</h4>
+            </a>
+            <h4 class="menu-opt">UPCOMING</h4>
+        </div>
+    </div>
+    <!--
+        <section class =  "card-area">
+    -->
+    <h3 class="header" id="checklist-head">Tasks List</h3>
+    <div class="cards-list">
+        {% for t in records_list %}
+        <div class="card" id="check-list">
+            <div class="check-div">
+                <h5 class="card-title">{{t['Activity']}} </h5>
+            </div>
+
+            <a href="finance.html" class="js-modal-show-fin">
+                <div class="button js-modal-show-fin" id="done">
+                    <a href="./done?_id={{t['_id']}}"><input type="button" value="Done"></a>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+
+</html>

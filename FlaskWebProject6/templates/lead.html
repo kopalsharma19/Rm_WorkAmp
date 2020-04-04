@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('lead_show')}}">
+                <h4 class="menu-opt" id="selected">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('expenditure')}}">
+                <h4 class="menu-opt">EXPENSES</h4>
+            </a>
+            <a href="{{url_for('login')}}">
+                <h4 class="menu-opt" id="sign-out">Sign Out</h4>
+            </a>
+        </div>
+    </div>
+    <div class="cards-list">
+        <div class="top-line">
+            <div class="sec-container">
+                <h3 class="complete-details">
+                    Tasks completed this month
+                </h3>
+                <div class="bar-container">
+                    <div id="bar-outer">
+                        <div id="bar-inner">
+                        </div>
+                    </div>
+                </div>
+                <p class="percent">{{per}} %</p>
+            </div>
+        </div>
+
+            <form method="POST" action="{{url_for('lead')}}" class="month-select">
+                <div class="lead-buttons">
+                    <select name="timeframe" id="month-check">
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <!--
+                    <div class="date-range hidden" id="dates">
+                        <input name="from" type="date" class="drange" id="from"> :
+                        <input name="to" type="date" class="drange" id="to">
+                        </div>-->
+                    <button class="button" type="submit" id="submit-lead">Submit</button>
+                </div>
+            </form>
+
+            <a href='./lead_task?time={{timeframe}}'>
+                <div class="button" id="task-det">
+                    <div class="button-text" id="td-button">Check Task Details</div>
+                </div>
+            </a>
+            <div class="expense-sec">
+                <p class="sec-head">
+                    Total Expenditure
+                    <b>Rs. {{total}}</b>
+                </p>
+                <!--<h3 class="amount" id="sec">
+                </h3>-->
+                <p class="sec-desc">
+                    You have spent Rs. {{diff}} {{word}} this month than the monthly average
+                </p>
+                <a href='./expenditure?time={{timeframe}}'>
+                    <div class="button" id="task-det">
+                        <div class="button-text" id="td-button"> See all expenditure details</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#month-check").change(function() {
+                var el = $(this);
+                if (el.val() === "13") {
+                    $("#dates").removeClass("hidden");
+                } else {
+                    $("#dates").addClass("hidden");
+                }
+            });
+            $("#bar-inner").width('{{per}}%');
+        });
+    </script>
+</body>
+</html>

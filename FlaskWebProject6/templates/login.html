@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="login-box">
+        <h4 class="login-text">Login</h4>
+    </div>
+    <div class="login-form">
+        <p>Username</p>
+        <input type="text" class="login">
+        <p>Password</p>
+        <input type="password" class="login">
+        <div class="buttons">
+            <a href="{{url_for('admin_dash')}}">
+                <div class="button" id="sign-in">Sign in</div>
+                <a href="{{url_for('lead_show')}}">
+                    <div class="button" id="lead-in">Sign in as Lead</div>
+                </a>
+        </div>
+    </div>
+</body>
+
+</html>

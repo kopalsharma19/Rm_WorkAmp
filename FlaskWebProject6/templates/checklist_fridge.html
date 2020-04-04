@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <h4 class="menu-opt" id="selected">TASKS TODAY</h4>
+            <h4 class="menu-opt">UPCOMING</h4>
+        </div>
+    </div>
+    <div class="head-box">
+        <h3 class="header" id="checklist-head">Washroom Checklist</h3>
+    </div>
+    <div class="cards-list">
+        <form method="POST" action="{{url_for('okaydrop_fridge')}}">
+            {% for t in fridge_list %}
+            <div class="card" id="check-list">
+                <div class="check-div">
+                    <h5 class="card-title" id="check-title">{{t['Item']}}</h5>
+                </div>
+                <select name="{{t['Item']}}" class="checklist">
+                    <option value="None">Choose</option>
+                    <option value="Okay">Okay</option>
+                    <option value="Not Okay">Not Okay</option>
+                </select>
+            </div>
+            {% endfor %} {% for t in fridge_done_list %}
+            <div class="card" id="check-list">
+                <div class="check-div">
+                    <h5 class="card-title" id="check-title">{{t['Item']}}</h5>
+                </div>
+                <select name="{{t['Item']}}" class="checklist">
+                    <option value="None">Choose</option>
+                    <option value="Okay">Okay</option>
+                    <option value="Not Okay">Not Okay</option>
+                </select>
+            </div>
+            {% endfor %}
+            <div class="buttons" id="submit-pos">
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

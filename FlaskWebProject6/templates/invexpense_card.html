@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('lead')}}">
+                <h4 class="menu-opt" id="selected">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('expenditure')}}">
+                <h4 class="menu-opt">EXPENSES</h4>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="grid" id="dashboard">
+        <div class="row">
+            <a href='./pantry_lead?time={{timeframe}}'>
+                <div class="dash-overlay">
+                    <div class="item" id="pic1">
+                        <div class="dash-list">Pantry</div>
+                        <div class="remaining">Rs. {{total_pan}}</div>
+                    </div>
+                </div>
+            </a>
+        <a href='./fnb_lead?time={{timeframe}}'>
+            <div class="dash-overlay">
+                <div class="item" id="pic2">
+                    <div class="dash-list">F&B</div>
+                    <div class="remaining">Rs. {{total_fnb}} </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a href='./office_supp_lead?time={{timeframe}}'>
+            <div class="dash-overlay">
+                <div class="item" id="pic3">
+                    <div class="dash-list">Office Supplies</div>
+                    <div class="remaining">Rs. {{total_os}}</div>
+                </div>
+            </div>
+        </a>
+        <a href='./housekeeping_lead?time={{timeframe}}'>
+            <div class="dash-overlay">
+                <div class="item" id="pic4">
+                    <div class="dash-list">Housekeeping</div>
+                    <div class="remaining">Rs. {{total_house}}</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+
+    <div class="buttons">
+        <div class="button" id="export">
+            <a href="{{url_for('excel')}}"
+            <div class="button-text" id="export-text">Export Excel</div>
+            </a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

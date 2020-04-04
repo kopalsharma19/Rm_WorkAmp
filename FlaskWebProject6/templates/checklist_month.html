@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('admin_dash')}}">
+            <h4 class="menu-opt" id="selected">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('admin')}}"
+            <h4 class="menu-opt">UPCOMING</h4>
+            </a>
+        </div>
+    </div>
+    <div class="head-box">
+        <h3 class="header" id="checklist-head">Washroom Checklist</h3>
+    </div>
+    <div class="cards-list">
+        <form method="POST" action="{{url_for('okaydrop_month')}}">
+            {% for t in monthly_list %}
+            <div class="card" id="check-list">
+                <div class="check-div">
+                    <h5 class="card-title" id="check-title">{{t['Title']}}</h5>
+                    <div class="task-details">
+                        <p> {{t['Process']}}</p>
+                        <p> {{t['Process2']}}</p>
+                        <p> {{t['Process3']}}</p>
+                        <p> {{t['Process4']}}</p>
+
+                    </div>
+                </div>
+
+                <select name="{{t['Title']}}" class="checklist">
+                    <option value="None">Choose</option>
+                    <option value="Okay">Okay</option>
+                    <option value="Not Okay">Not Okay</option>
+                </select>
+            </div>
+            {% endfor %} 
+            
+            {% for t in monthly_done_list %}
+            <div class="card" id="check-list">
+                <div class="check-div">
+                    <h5 class="card-title" id="check-title">{{t['Title']}}</h5>
+                    <div class="task-details">
+                        <p> {{t['Process']}}</p>
+                        <p> {{t['Process2']}}</p>
+                        <p> {{t['Process3']}}</p>
+                        <p> {{t['Process4']}}</p>
+                    </div>
+                </div>
+
+                <select name="{{t['Title']}}" class="checklist">
+                    <option value="None">Choose</option>
+                    <option value="Okay">Okay</option>
+                    <option value="Not Okay">Not Okay</option>
+                </select>
+            </div>
+            {% endfor %}
+
+            <div class="buttons">
+                <button class="button" type="submit" id="submit-pos">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

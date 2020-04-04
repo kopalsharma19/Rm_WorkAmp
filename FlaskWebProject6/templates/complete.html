@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('admin_dash')}}">
+                <h4 class="menu-opt">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('admin')}}">
+                <h4 class="menu-opt" id="selected">UPCOMING</h4>
+        </div>
+        </a>
+    </div>
+    <div class="head-box">
+        <h3 class="header" id="checklist-head">Completed Tasks</h3>
+    </div>
+    <div class="cards-list" id="expense-list">
+        {% for t in records_list %}
+        <div class="card" id="complete-list">
+            <div class="complete-div">
+                <h5 class="card-title" id="expense-title">{{t['Activity']}}</h5>
+            </div>
+            <div class="cost-list complete-div" id="time">
+                <p class="cost" id="time-list-text">{{t['doneAt']}}</p>
+            </div>
+            <div class="complete-div">
+                <a href="./done?_id={{t['_id']}}"><input type="button" value="Not Done" class="button" id="not-done-button"></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="cards-list" id="expense-list">
+        {% for t in complete_snag %}
+        <div class="card" id="complete-list">
+            <div class="complete-div">
+                <h5 class="card-title" id="expense-title">Snag</h5>
+            </div>
+            <div class="cost-list" id="time">
+                <p class="cost" id="time-list-text">{{t['doneAt']}}</p>
+            </div>
+            <a href="./snagdone?_id={{t['_id']}}"><input type="button" value="UNDO" class="done"></a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="buttons">
+        <div class="button" id="export">
+            <a href="{{url_for('excel')}}">
+                <div class="button-text" id="export-text">Export Excel</div>
+            </a>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+

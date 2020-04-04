@@ -1,0 +1,742 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+    font-family: 'Gilmer Bold';
+    src: url(D:/src/GilmerRegular.otf);
+}
+
+@font-face {
+    font-family: 'Gilmer Light';
+    src: url(D:/src/GilmerLight.otf);
+}
+
+@font-face {
+    font-family: 'Gilmer Medium';
+    src: url(D:/src/GilmerMedium.otf);
+}
+
+@font-face {
+    font-family: 'Gilmer';
+    src: url(D:/src/GilmerRegular.otf);
+}
+
+* {
+    transition: all ease .2s;
+    box-sizing: border-box;
+    font-family: 'Gilmer', sans-serif;
+    margin: auto;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.6em;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 0;
+    margin-block-start: 0;
+}
+
+h4 {
+    font-size: 1.6em;
+    color: whitesmoke;
+    font-weight: 110;
+    letter-spacing: 0.5px;
+}
+
+h5 {
+    font-size: 1.5em;
+    color: whitesmoke;
+    font-weight: 150;
+}
+
+h6 {
+    font-size: 1.2em;
+    color: whitesmoke;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+div {
+    margin: 0;
+}
+
+select {
+    width: 80px;
+}
+
+table {
+    border-spacing: 1em;
+    margin-left: 0;
+}
+
+.side-menu {
+    position: fixed;
+    float: left;
+    height: 100%;
+    width: 16vw;
+    background-color: #4e4e4e;
+}
+
+.workamp-text {
+    margin-top: 1em;
+    width: 60%;
+    font-weight: 700;
+}
+
+.menu-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.menu-opt {
+    cursor: pointer;
+    margin-top: 0.5em;
+    margin-left: 10px;
+}
+
+#selected {
+    color: #2da4c1;
+}
+
+.avatar {
+    padding: 10px;
+    margin: 20px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.avatar-text {
+    position: relative;
+    float: right;
+    padding-top: 2px;
+    padding-left: 20px;
+    vertical-align: center;
+    line-height: 2em;
+    font-weight: 500;
+}
+
+.icon {
+    position: relative;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+    float: left;
+    vertical-align: center;
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 18vw;
+}
+
+.card {
+    float: left;
+    position: relative;
+    max-width: 55vw;
+    max-height: 30vw;
+    border: 1px solid #4e4e4e;
+    border-radius: 0.5rem;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+#card-icon {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.card-title {
+    font-family: 'Gilmer Medium', 'Roboto';
+    position: relative;
+    font-weight: 100;
+    color: #4e4e4e;
+    margin-top: 35px;
+    margin-left: 80px;
+}
+
+#check-title {
+    margin-top: 1em;
+    margin-left: 50px;
+    margin-right: 0;
+    margin-bottom: 1em;
+}
+
+#complete-list {
+    padding-bottom: 1.2em;
+    width: 50vw;
+}
+
+.text-content {
+    float: left;
+    margin-left: 48px;
+    margin-bottom: 20px;
+    max-width: 42vw;
+}
+
+.content {
+    padding: 15px;
+    margin: 20px;
+}
+
+.buttons {
+    margin-left: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.button {
+    cursor: pointer;
+    border: solid 0.5px #4e4e4e;
+    border-radius: 0.4rem;
+    padding: 8px;
+}
+
+#save {
+    /*
+    position: absolute;
+    bottom: 0;
+    */
+    margin-left: 8vw;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    float: left;
+}
+
+#cancel {
+    margin-left: 4em;
+    padding-left: 10px;
+    padding-right: 1em;
+    padding-left: 1em;
+    float: right;
+}
+
+#contact {
+    position: absolute;
+    margin-left: 14vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 33vw;
+    float: right;
+}
+
+.button-text {
+    cursor: pointer;
+    right: 10px;
+    margin: 3px;
+}
+
+.check-button {
+    position: absolute;
+    left: 0;
+    visibility: show;
+}
+
+.checked-button {
+    position: absolute;
+    left: 0;
+    opacity: 100;
+}
+
+.checklist {
+    position: relative;
+    float: right;
+    margin-top: 2em;
+    margin-right: 2em;
+}
+
+.card-header {
+    margin-top: 40px;
+}
+
+#check-list {
+    width: 50vw;
+}
+
+.header {
+    position: relative;
+    margin-left: 22vw;
+    padding-top: 2em;
+    width: 40%;
+}
+
+.head-text {
+    float: left;
+}
+
+.check-div {
+    width: 40%;
+    float: left;
+}
+
+.grid {
+    position: relative;
+    padding: 2em;
+    margin-left: 15vw;
+}
+
+.row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+    margin-left: 3em;
+}
+
+.item {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    width: 280px;
+    height: 100px;
+    /*background: rgba(0, 0, 0, 0.1);*/
+    margin: 1.2em;
+    border: 1px solid #4e4e4e;
+}
+
+#long {
+    width: 40vw;
+}
+
+.categories {
+    margin: 0.5em;
+}
+
+.amount {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.expense-detail {
+    position: absolute;
+    top: 10vh;
+    margin-left: 18vw;
+    width: 60vw;
+    height: 80vh;
+    background-color: white;
+    border: 1px solid #4e4e4e;
+}
+
+.expense-text {
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+#head-cost {
+    float: right;
+    margin-top: 2em;
+}
+
+.head {
+    padding-bottom: 20px;
+}
+
+#expense-list {
+    position: absolute;
+    margin-top: 1em;
+}
+
+#export {
+    width: 10em;
+    cursor: pointer;
+    margin-left: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 0.2rem;
+}
+
+.date {
+    margin-bottom: 15px;
+    margin-left: 4.2em;
+}
+
+#expense-title {
+    margin-left: 2em;
+    margin-top: 0.8em;
+}
+
+.cost-list {
+    margin-left: 22vw;
+}
+
+#cost-list-text {
+    margin-top: 1.5em;
+    margin-right: 2em;
+}
+
+#details {
+    float: right;
+    width: 100px;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+    padding-left: 20px;
+    border-radius: 0.3rem;
+}
+
+#not-done {
+    float: right;
+    width: 100px;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+    padding-left: 10px;
+    border-radius: 0.3rem;
+    background-color: rgb(205, 92, 92, 0.8);
+}
+
+#cost-text {
+    margin-left: 30vw;
+}
+
+#checklist-head {
+    margin-left: 19vw;
+}
+
+#done-button {
+    padding-left: 0px;
+}
+
+#done {
+    float: right;
+    cursor: pointer;
+    z-index: 0;
+    width: 100px;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+    padding-left: 25px;
+    border-radius: 0.3rem;
+}
+
+.financial-prompt {
+    visibility: show;
+    z-index: 100;
+    position: absolute;
+    top: 30%;
+    margin-left: 12vw;
+    width: 40vw;
+    height: 20vh;
+    background-color: white;
+    border: 1px solid #4e4e4e;
+}
+
+.fin-quest {
+    padding: 1em;
+    padding-bottom: 0em;
+}
+
+#prompt {
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+#yes {
+    margin-left: 70%;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    float: left;
+}
+
+#no {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    float: right;
+}
+
+.overlay {
+    background-color: gray;
+}
+
+.transaction-overlay {
+    visibility: show;
+    z-index: 1;
+    position: absolute;
+    top: 14vh;
+    margin-left: 18vw;
+    width: 60vw;
+    height: 65vh;
+    background-color: white;
+    border: 1px solid #4e4e4e;
+}
+
+#transact {
+    visibility: show;
+}
+
+.input-label {
+    padding: 1.5em;
+    margin-left: 1em;
+}
+
+    .input-label:nth-child(1) {
+        margin-top: 2em;
+    }
+
+input {
+    height: 1.5em;
+    z-index: 1;
+}
+
+#title-input {
+    width: 40vw;
+}
+
+#category {
+    width: 8vw;
+    margin-right: 3em;
+}
+
+#invoice {
+    margin-right: 5em;
+}
+
+#submit {
+    float: left;
+    margin-left: 75%;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+}
+
+#cancel-overlay {
+    margin-right: 2em;
+    padding-right: 1.4em;
+    padding-left: 1.4em;
+    float: right;
+}
+
+.dash-list {
+    margin: 0.5em;
+    margin-left: 0.8em;
+    margin-top: 0.8em;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.remaining {
+    float: right;
+    margin-right: 1em;
+    margin-top: 0.8em;
+}
+
+#dashboard {
+    margin-left: 16vw;
+}
+
+.dash-overlay {
+    margin: 0px;
+    /*background-color: #2da4c1;*/
+}
+
+.item:hover {
+    background-color: #2da4c1;
+    color: white;
+}
+
+#expense-button {
+    cursor: pointer;
+    z-index: 1;
+    margin-top: 2em;
+    margin-left: 24%;
+    width: 12em;
+    padding-left: 2em;
+}
+
+.dash-link {
+    margin: 0;
+}
+
+.is-hidden--off-flow {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: -10;
+    /* *1* */
+    visibility: hidden;
+    /* *1* */
+}
+
+.is-shown--off-flow {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    visibility: visible;
+}
+
+.l-modal-shadow {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: block;
+    background: #161616;
+    opacity: 0.92;
+    z-index: -1;
+    cursor: pointer;
+}
+
+.week-inventory {
+    float: right;
+    margin-top: 1.5em;
+    margin-right: 1em;
+}
+
+.inventory-input {
+    height: 2em;
+    width: 6em;
+}
+
+#time-list-text {
+    font-weight: 450;
+    max-width: 15em;
+    margin-top: 1.5em;
+    margin-right: 2em;
+    border: 1px solid #4e4e4e;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2em;
+}
+
+.top-line {
+    margin-top: 3em;
+}
+
+.bar-outer {
+    width: 40vw;
+    height: 2em;
+    background-color: rgb(192, 192, 192, 0.6);
+    border: 1px solid #4e4e4e 0.8;
+    border-radius: 0.2rem;
+}
+
+.bar-inner {
+    width: 30vw;
+    height: 2em;
+    background-color: rgb(0, 128, 0);
+}
+
+#task-det {
+    width: 25vw;
+    border-radius: 0.1em;
+    background-color: rgb(128, 128, 128, 0.2);
+}
+
+.sec-container {
+    width: 50%;
+    float: left;
+}
+
+.bar-container {
+    width: 50%;
+}
+
+.month-check {
+    width: 10vw;
+    height: 2em;
+}
+
+.sec-head {
+    margin-top: 2em;
+    font-weight: 500;
+    font-size: 1.3em;
+    margin-bottom: 0.4em;
+    width: 40%;
+}
+
+#sec {
+    margin-right: 43vw;
+}
+
+.button-container {
+    width: 30%;
+}
+
+.complete {
+    background-color: green;
+    color: white;
+}
+
+.pending {
+    background-color: red;
+    color: white;
+}
+
+.inference-detail {
+    width: 30%;
+    float: left;
+    margin-right: 2em;
+}
+
+.inference-header {
+    margin-top: 1em;
+}
+
+.inv {
+    width: 240px;
+}
+
+.month-expense {
+    margin-left: 21.5vw;
+}
+
+.header {
+    font-weight: 600;
+}
+
+.first {
+    width: 12vw;
+}
+
+.login-box {
+    height: 20vh;
+    width: 80vw;
+    background-color: #4e4e4e;
+    color: white;
+    padding-top: 3em;
+}
+
+.shadow-overlay {
+    background: rgb(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-table {
+    margin-top: 2em;
+    margin-left: 2vw;
+    border-spacing: 1.5em;
+}
+
+#close {
+    display: inline-block;
+    position: absolute;
+    bottom: 5vh;
+    left: 3em;
+}

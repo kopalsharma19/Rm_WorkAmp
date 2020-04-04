@@ -1,0 +1,944 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+    font-family: 'Gilmer Bold';
+    src: url(D:/src/GilmerRegular.otf);
+}
+
+@font-face {
+    font-family: 'Gilmer Light';
+    src: url(D:/src/GilmerLight.otf);
+}
+
+@font-face {
+    font-family: 'Gilmer Medium';
+    src: url(D:/src/GilmerMedium.otf);
+}
+
+@font-face {
+    font-family: 'Gilmer';
+    src: url(D:/src/GilmerRegular.otf);
+}
+
+* {
+    transition: all ease .2s;
+    box-sizing: border-box;
+    font-family: 'Gilmer', sans-serif;
+    margin: auto;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.6em;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: 700;
+    margin: 0;
+    margin-block-start: 0;
+}
+
+h4 {
+    font-size: 1.6em;
+    color: whitesmoke;
+    font-weight: 110;
+    letter-spacing: 0.5px;
+}
+
+h5 {
+    font-size: 1.5em;
+    color: whitesmoke;
+    font-weight: 150;
+}
+
+h6 {
+    font-size: 1.2em;
+    color: whitesmoke;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+div {
+    margin: 0;
+}
+
+select {
+    width: 80px;
+}
+
+table {
+    border-spacing: 1em;
+    margin-left: 0;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    float: left;
+    height: 100%;
+    width: 16vw;
+    background-color: #000000;
+}
+
+.workamp-text {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    width: 60%;
+    font-weight: 700;
+}
+
+.menu-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.menu-opt {
+    cursor: pointer;
+    margin-top: 0.5em;
+    margin-left: 10px;
+}
+
+#sign-out {
+    position: fixed;
+    bottom: 1em;
+}
+
+#lead-in {
+    background-color: white;
+    color: #4FC3C7;
+    border: 1px solid #4FC3C7;
+    margin-left: 1em;
+}
+
+#selected {
+    color: #4FC3C7;
+}
+
+.avatar {
+    padding: 10px;
+    margin: 20px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.avatar-text {
+    position: relative;
+    float: right;
+    padding-top: 2px;
+    padding-left: 20px;
+    vertical-align: center;
+    line-height: 2em;
+    font-weight: 500;
+}
+
+.icon {
+    position: relative;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+    float: left;
+    vertical-align: center;
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 18vw;
+}
+
+.card {
+    float: left;
+    position: relative;
+    max-width: 55vw;
+    max-height: 30vw;
+    border: 1px solid #707070;
+    border-radius: 0.5rem;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+#card-icon {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.card-title {
+    font-family: 'Gilmer Medium', 'Roboto';
+    position: relative;
+    font-weight: 100;
+    color: #000000;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+
+#admin-card {
+    margin-left: 1.5em;
+}
+
+.task-details {
+    margin: 1em 2em 1em 2.2em;
+}
+
+#check-title {
+    margin-top: 1em;
+    margin-left: 50px;
+    margin-right: 0;
+    margin-bottom: 1em;
+    float: left;
+    width: 40%;
+}
+
+#complete-list {
+    display: table;
+    padding-bottom: 1.2em;
+    width: 80vw;
+}
+
+.text-content {
+    float: left;
+    margin-left: 48px;
+    margin-bottom: 20px;
+    max-width: 42vw;
+}
+
+.content {
+    padding: 15px;
+    margin: 20px;
+}
+
+.buttons {
+    margin-left: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.lead-buttons {
+    display: table;
+}
+
+.buttons-over {
+    margin: 5em 0 2em 1em;
+    float: right;
+}
+
+#submit-pos {
+    float: left;
+    margin-top: 2em;
+    margin-right: 100%;
+    margin-left: 1em;
+}
+
+#submit-lead {
+    background-color: white;
+    color: #4FC3C7;
+    border: 1px solid #4FC3C7;
+}
+
+#submit-overlay {
+    margin-left: 2em;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 33pt;
+    background-color: #4FC3C7;
+    color: white;
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    font-size: 1em;
+}
+
+#save {
+    /*
+    position: absolute;
+    bottom: 0;
+    */
+    margin-left: 8vw;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    float: left;
+}
+
+#cancel {
+    margin-left: 4em;
+    padding-left: 10px;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#contact {
+    position: absolute;
+    margin-left: 14vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 33vw;
+    float: right;
+}
+
+.button-text {
+    cursor: pointer;
+    right: 10px;
+    margin: 3px;
+}
+
+.check-button {
+    position: absolute;
+    left: 0;
+    visibility: show;
+}
+
+.checked-button {
+    position: absolute;
+    left: 0;
+    opacity: 100;
+}
+
+.checklist {
+    position: relative;
+    width: 10vw;
+    height: 2em;
+    margin: 2em 2em 0 2em;
+    margin-top: 2em;
+    margin-right: 2em;
+    float: right;
+}
+
+.checklist-hidden {
+    position: relative;
+    float: right;
+    width: 10vw;
+    height: 2em;
+    margin: 2em 4em 0 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.card-header {
+    margin-top: 40px;
+}
+
+#check-list {
+    width: 50vw;
+    float: left;
+}
+
+.header {
+    position: relative;
+    margin-left: 0;
+    width: 40%;
+}
+
+.head-text {
+    float: left;
+}
+
+.head-box {
+    background-color: #4FC3C7;
+    margin-left: 20vw;
+    margin-top: 1.5em;
+    padding: 1.5em 0 1.5em 1.3em;
+    width: 100%;
+}
+
+.check-div {
+    width: 70%;
+    float: left;
+    margin-bottom: 1em;
+}
+
+.complete-div {
+    width: 45%;
+    display: table-cell;
+}
+
+.grid {
+    position: relative;
+    padding: 2em;
+    margin-left: 15vw;
+}
+
+.row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+    margin-left: 3em;
+}
+
+.item {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    width: 280px;
+    height: 100px;
+    /*background: rgba(0, 0, 0, 0.1);*/
+    margin: 1.2em;
+    border: 1px solid #707070;
+    border-radius: 15pt;
+    padding: 0.2em;
+}
+
+#long {
+    width: 40vw;
+}
+
+.categories {
+    margin: 0.5em;
+}
+
+.amount {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.expense-detail {
+    position: absolute;
+    top: 10vh;
+    margin-left: 18vw;
+    width: 60vw;
+    height: 80vh;
+    background-color: white;
+    border: 1px solid #707070;
+}
+
+.expense-text {
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+#head-cost {
+    float: right;
+    margin-top: 2em;
+}
+
+.head {
+    padding-bottom: 20px;
+}
+
+#expense-list {
+    position: absolute;
+    margin-top: 1em;
+}
+
+#export {
+    width: 10em;
+    cursor: pointer;
+    margin-left: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 0.2rem;
+}
+
+.date {
+    margin-bottom: 15px;
+    margin-left: 3em;
+}
+
+.date-range {
+    width: 30%;
+    float: right;
+    margin-top: 2em;
+}
+
+.drange {
+    height: 1.5em;
+}
+
+#expense-title {
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+.cost-list {
+    margin-left: 22vw;
+}
+
+#cost-list-text {
+    margin-top: 1.5em;
+    margin-right: 2em;
+    float: right;
+}
+
+#details {
+    float: right;
+    width: 100px;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+    padding-left: 20px;
+    border-radius: 0.3rem;
+}
+
+#not-done {
+    float: right;
+    width: 100px;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+    padding-left: 10px;
+    border-radius: 0.3rem;
+    background-color: rgb(205, 92, 92, 0.8);
+}
+
+#cost-text {
+    margin-left: 30vw;
+}
+
+#checklist-head {
+    margin-left: 0;
+    color: white;
+    font-weight: 700;
+}
+
+#done-button {
+    padding-left: 0px;
+}
+
+#not-done-button {
+    display: inline-block;
+    height: auto;
+    margin-right: 1em;
+}
+
+#done {
+    float: right;
+    cursor: pointer;
+    z-index: 0;
+    width: 100px;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+    padding-left: 25px;
+    border-radius: 0.3rem;
+}
+
+.financial-prompt {
+    visibility: show;
+    z-index: 100;
+    position: absolute;
+    top: 30%;
+    margin-left: 12vw;
+    width: 40vw;
+    height: 20vh;
+    background-color: white;
+    border: 1px solid #707070;
+}
+
+.fin-quest {
+    padding: 2em 0 0 1.5em;
+}
+
+#prompt {
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+#yes {
+    margin-left: 70%;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    float: left;
+}
+
+#no {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    float: right;
+}
+
+.overlay {
+    background-color: gray;
+}
+
+.transaction-overlay {
+    visibility: show;
+    z-index: 1;
+    position: absolute;
+    top: 30vh;
+    margin-left: 18vw;
+    width: 60vw;
+    background-color: white;
+    border: 1px solid #707070;
+    padding-bottom: 2em;
+}
+
+#transact {
+    visibility: show;
+}
+
+.input-label {
+    padding: 1.5em;
+    margin-left: 1em;
+}
+
+    .input-label:nth-child(1) {
+        margin-top: 2em;
+    }
+
+input {
+    height: 1.5em;
+    z-index: 1;
+}
+
+#title-input {
+    width: 40vw;
+}
+
+#category {
+    width: 8vw;
+    margin-right: 3em;
+}
+
+.options {
+    width: 10vw;
+    margin-left: 0.3em;
+}
+
+#task-exp {
+    position: absolute;
+}
+
+#task-inv {
+    position: absolute;
+}
+
+#task {
+    width: 8vw;
+    margin-right: 3em;
+}
+
+#invoice {
+    margin-right: 5em;
+}
+
+#submit {
+    float: left;
+    margin-left: 75%;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+}
+
+#submit-box {
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    float: right;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+#task-done {
+    height: auto;
+    float: right;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+#cancel-overlay {
+    margin-right: 2em;
+    padding-right: 1.4em;
+    padding-left: 1.4em;
+    margin-left: 1em;
+}
+
+.dash-list {
+    margin: 0.5em;
+    margin-left: 0.8em;
+    margin-top: 0.8em;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.remaining {
+    float: right;
+    margin-right: 1em;
+    margin-top: 0.8em;
+}
+
+#dashboard {
+    margin-left: 16vw;
+}
+
+.dash-overlay {
+    margin: 0px;
+    /*background-color: #2da4c1;*/
+}
+
+.item:hover {
+    background-color: #4FC3C7;
+    color: white;
+    border: 0;
+    transition: color linear 0.25s;
+    transition: background-color linear 0.2s;
+}
+
+#expense-button {
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1;
+    margin-top: 2em;
+    margin-left: 24%;
+}
+
+.dash-link {
+    margin: 0;
+}
+
+.is-hidden--off-flow {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: -10;
+    /* *1* */
+    visibility: hidden;
+    /* *1* */
+}
+
+.is-shown--off-flow {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    visibility: visible;
+}
+
+.l-modal-shadow {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: block;
+    background: #161616;
+    opacity: 0.92;
+    z-index: -1;
+    cursor: pointer;
+}
+
+.week-inventory {
+    float: right;
+    display: table;
+    margin-top: 1.5em;
+    margin-right: 1em;
+    display: inline-block;
+}
+
+.inv-disp {
+    display: table-cell;
+    padding: 0.2em 0.4em 0.2em 0.4em;
+    float: left;
+    border: 1px solid #707070;
+}
+
+.inv-text {
+    padding: 0.2em 0.4em 0.2em 0.4em;
+    display: table-cell;
+    float: right;
+}
+
+.inventory-input {
+    height: 2em;
+    width: 6em;
+}
+
+#time-list-text {
+    font-weight: 400;
+    max-width: 15em;
+    margin-top: 1.5em;
+    border: 1px solid #707070;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+.top-line {
+    margin-top: 3em;
+}
+
+#bar-outer {
+    width: 40vw;
+    height: 2em;
+    background-color: rgb(192, 192, 192, 0.6);
+    border-radius: 0.2rem;
+}
+
+#bar-inner {
+    width: 30%;
+    height: 2em;
+    background-color: #4FC3C7;
+}
+
+#task-det {
+    width: 25vw;
+    border-radius: 20pt;
+    color: white;
+    background-color: #4FC3C7;
+    border: 0;
+}
+
+.sec-container {
+    width: 50%;
+    float: left;
+}
+
+.sec-desc {
+    margin-bottom: 1em;
+}
+
+.bar-container {
+    width: 50%;
+}
+
+.lead-buttons {
+    float: left;
+    margin: 0.5em 0 1.5em 0;
+}
+
+.month-select {
+    margin-left: 0em;
+}
+
+#month-check {
+    width: 10vw;
+    height: 2em;
+    float: left;
+    margin: 0.5em 2em 1.5em 0em;
+}
+
+.sec-head {
+    margin-top: 2em;
+    font-weight: 500;
+    font-size: 1.3em;
+    margin-bottom: 0.4em;
+    width: 40%;
+}
+
+#sec {
+    margin-right: 43vw;
+}
+
+.button-container {
+    width: 30%;
+}
+
+.complete {
+    background-color: white;
+    color: #4FC3C7;
+    border: 1px solid #4FC3C7;
+}
+
+.pending {
+    background-color: white;
+    color: #FF1C1C;
+    border: 1px solid #FF1C1C;
+}
+
+.pending:hover {
+        background-color: #FF1C1C;
+        color: white;
+        border: 0;
+}
+
+.inference-detail {
+    width: 30%;
+    float: left;
+    margin-right: 2em;
+}
+
+.inference-header {
+    margin-top: 1em;
+}
+
+.inv {
+    width: 240px;
+}
+
+.month-expense {
+    margin-left: 21.5vw;
+}
+
+.first {
+    width: 12vw;
+    color: black;
+}
+
+.table-header {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: black;
+}
+
+.login-box {
+    height: 20vh;
+    width: 100vw;
+    background-color: #000000;
+    color: white;
+    padding-top: 3em;
+    padding-left: 2em;
+}
+
+.login-form {
+    margin: 2em 0 0 1.5em;
+}
+
+.login {
+    margin-bottom: 2em;
+    border: 1px solid #707070;
+    margin-top: 1em;
+    width: 15vw;
+    height: 1.8em;
+}
+
+.shadow-overlay {
+    background: rgb(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-table {
+    margin-top: 2em;
+    margin-left: 2vw;
+    border-spacing: 1.5em;
+}
+
+#close {
+    display: inline-block;
+    position: absolute;
+    bottom: 5vh;
+    left: 3em;
+}
+.lead-buttons {
+    float: left;
+    margin: 1em 0 1.5em 0;
+}
+

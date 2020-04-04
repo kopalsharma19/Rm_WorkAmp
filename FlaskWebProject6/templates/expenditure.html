@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('lead_show')}}">
+                <h4 class="menu-opt">DASHBOARD</h4>
+            </a>
+            <a href='./expenditure?time={{timeframe}}'>
+                <h4 class="menu-opt" id="selected">EXPENSES</h4>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="head-box">
+        <h3 class="header" id="checklist-head">Expenditure</h3>
+    </div>
+
+
+
+    <div class="grid">
+        <div class="row">
+            <a href='./invexpense_card?time={{timeframe}}'>
+                <div class="item inv" id="pic1">
+                    <div class="categories">Inventory</div>
+                    <div class="amount">Rs. {{total_inv}}</div>
+                </div>
+            </a>
+            <a href='./salary_lead?time={{timeframe}}'>
+                <div class="item inv" id="pic3">
+                    <div class="categories">Salary AMC</div>
+                    <div class="amount">Rs. {{total_sal}}</div>
+                </div>
+            </a>
+            <a href='./fixed?time={{timeframe}}'>
+                <div class="item inv" id="pic4">
+                    <div class="categories">Fixed Cost (Water+Internet+Rent)</div>
+                    <div class="amount">Rs. {{ totalfix }}</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <table class="month-expense">
+        <tr class="table-header">
+            <td class="first">Money spent on items</td>
+            <td>This Month</td>
+            <td>Last Month</td>
+            <td>Monthly Average</td>
+            <td>Insights(compared to momthly avg)</td>
+        </tr>
+        <tr>
+            <td class="first">Electricity</td>
+            <td>{{totale}}</td>
+            <td>{{totaleold}}</td>
+            <td>{{avge}}</td>
+            <td>You spent Rs. {{diffe}} {{worde}} than the month avg</td>
+        </tr>
+        <tr>
+            <td class="first">Salary of AMC</td>
+            <td>{{totals}}</td>
+            <td>{{totalsold}}</td>
+            <td>{{avgs}}</td>
+            <td>You spent Rs. {{diffs}} {{words}} than the month avg</td>
+
+        </tr>
+        <tr>
+            <td class="first">Other Total Expenditure</td>
+            <td>{{total}}</td>
+            <td>{{totalold}}</td>
+            <td>{{avg}}</td>
+            <td>You spent Rs. {{diff}} {{word}} than the month avg </td>
+
+        </tr>
+        <tr>
+            <td class="first">Other Inventory Expenditure</td>
+            <td>{{totali}}</td>
+            <td>{{totaliold}}</td>
+            <td>{{avgi}}</td>
+            <td>You spent Rs. {{diffi}} {{wordi}} than the month avg </td>
+
+        </tr>
+        <tr>
+            <td class="first">Other Expenses Expenditure</td>
+            <td>{{totalex}}</td>
+            <td>{{totalexold}}</td>
+            <td>{{avgex}}</td>
+            <td>You spent Rs. {{diffex}} {{wordex}} than the month avg</td>
+
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>

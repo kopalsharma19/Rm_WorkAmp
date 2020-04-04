@@ -1,0 +1,82 @@
+<!DOCTYPE html> ​
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <title>Admin Page</title>
+</head>
+​
+
+<body>
+    <div class="shadow-overlay">
+        <div class="side-menu">
+            <h4 class="workamp-text">WORKAMP</h4>
+            <div class="menu-select">
+                <a href="admin_dash.html">
+                    <h4 class="menu-opt" id="selected">DASHBOARD</h4>
+                </a>
+                <a href="admin.html">
+                    <h4 class="menu-opt">UPCOMING</h4>
+                </a>
+                <a href="check_inevntory.html">
+                    <h4 class="menu-opt">CHECK INVENTORY</h4>
+                </a>
+                <a href="vendor.html">
+                    <h4 class="menu-opt">VENDOR LIST</h4>
+                </a>
+            </div>
+        </div>
+        ​
+        <div class="grid" id="dashboard">
+            <div class="row">
+                <div class="dash-overlay">
+                    <a href="{{url_for('admin')}}" class="dash-link">
+                        <div class="item" id="long">
+                            <div class="dash-list">Pending Tasks</div>
+                            <div class="remaining">{{recordsc}} remaining</div>
+                        </div>
+                    </a>
+                </div>
+                ​
+            </div>
+            <div class="row">
+                <div class="dash-overlay">
+                    <a href="{{url_for('complete')}}" class="dash-link">
+                        <div class="item" id="long">
+                            <div class="dash-list">Completed Tasks</div>
+                            <div class="remaining">{{completesc}} done </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        ​
+        <div class="transaction-overlay" id="transact">
+            <form method="POST" action="{{url_for('add_task_func')}}">
+                ​
+                <p class="input-label">
+                    Task Title: <input name="task" type="text" id="title-input">
+                </p>
+                <p class="input-label">
+                    Category
+                    <select name="category" class="options" id="category">
+                        <option value="Meeting Room">Meeting Room</option>
+                        <option value="Huddle Room">Huddle Room</option>
+                        <option value="Huddle Room">WashRoom</option>
+                        <option value="Huddle Room">Fridge</option>
+                        <option value="Huddle Room">Monthly Checklist</option>
+                        <option value="Huddle Room">Inventory</option>
+                    </select> 
+                </p>
+                <button class="button" type="submit" id="submit-overlay">Submit</button>
+                <a href="{{url_for('admin_task')}}">
+                    <div class="button" id="cancel-overlay">Cancel</div>
+                </a>
+            </form>
+        </div>
+    </div>
+</body>
+​
+
+</html>

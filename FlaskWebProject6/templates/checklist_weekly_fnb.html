@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Weekly Checklist</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="avatar">
+            <img src="src/admin.jpg.png" alt="Admin Profile Image" class="icon">
+            <h4 class="avatar-text">ADMIN</h4>
+        </div>
+        <div class="menu-select">
+            <a href="{{url_for('admin_dash')}}">
+                <h4 class="menu-opt">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('admin')}}">
+                <h4 class="menu-opt" id="selected">TASKS</h4>
+            </a>
+        </div>
+
+    </div>
+    <div class="head-box">
+        <h3 class="header" id="checklist-head">Weekly Checklist</h3>
+    </div>
+    <div class="cards-list">
+        <form method="POST" action="{{url_for('inventory_fnb')}}">
+            {% for t in fnb_list %}
+            <div class="card" id="check-list">
+                <div class="check-div">
+                    <h5 class="card-title" id="check-title">{{t["Item"]}}</h5>
+                </div>
+                <div class="week-inventory">
+                    <input name="{{t['Item']}}" type="text" class="inventory-input"> Units
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="buttons" id="submit-pos">
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

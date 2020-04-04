@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('admin_dash')}}">
+                <h4 class="menu-opt" id="selected">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('admin')}}">
+                <h4 class="menu-opt">UPCOMING</h4>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="grid" id="dashboard">
+        <div class="row">
+            <a href="{{url_for('checklist')}}">
+                <div class="dash-overlay">
+                    <div class="item" id="pic1">
+                        <div class="dash-list">Washroom</div>
+                        <div class="remaining">{{wrem}} remaining</div>
+                    </div>
+            </a>
+            </div>
+            <a href="{{url_for('checklist_fridge')}}">
+                <div class="dash-overlay">
+                    <div class="item" id="pic2">
+                        <div class="dash-list">Fridge</div>
+                        <div class="remaining">{{frem}} remaining</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <a href="{{url_for('checklist_huddleroom')}}">
+                <div class="dash-overlay">
+                    <div class="item" id="pic3">
+                        <div class="dash-list">Huddle Room</div>
+                        <div class="remaining">{{hrem}} remaining</div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{url_for('checklist_meeting')}}">
+                <div class="dash-overlay">
+                    <div class="item" id="pic4">
+                        <div class="dash-list">Meeting Room</div>
+                        <div class="remaining">{{mrem}} remaining</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+</body>
+
+</html>

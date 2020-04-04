@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <h4 class="workamp-text">WORKAMP</h4>
+        <div class="menu-select">
+            <a href="{{url_for('admin_dash')}}">
+                <h4 class="menu-opt">DASHBOARD</h4>
+            </a>
+            <a href="{{url_for('admin')}}">
+                <h4 class="menu-opt" id="selected">UPCOMING</h4>
+            </a>
+        </div>
+
+    </div>
+    <div class="grid" id="dashboard">
+        <div class="row">
+            <div class="dash-overlay">
+                <a href="{{url_for('admin')}}" class="dash-link">
+                    <div class="item" id="long">
+                        <div class="dash-list">Pending Tasks</div>
+                        <div class="remaining">{{recordsc}} remaining</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="dash-overlay">
+                <a href="{{url_for('complete')}}" class="dash-link">
+                    <div class="item" id="long">
+                        <div class="dash-list">Completed Tasks</div>
+                        <div class="remaining">{{completesc}} done </div>
+                    </div>
+                </a>
+            </div>
+            </a>
+        </div>
+        <a href="{{url_for('add_task')}}">
+            <div class="button" id="expense-button">
+                <div class="button-text" id="expense-button-text">Add Task</div>
+            </div>
+        </a>
+    </div>
+
+
+</body>
+
+</html>

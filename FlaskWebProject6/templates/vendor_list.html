@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/static/content/index.css" />
+    <meta name="viewport" content="width = device-width, initial-scale= 1.0" />
+    <script src="https://kit.fontawesome.com/18264bfb6e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/admin.js"></script>
+    <title>Admin Page</title>
+</head>
+<body>
+    <div class="shadow-overlay">
+        <div class="side-menu">
+            <h4 class="workamp-text">WORKAMP</h4>
+            <div class="avatar">
+                <img src="src/admin.jpg.png" alt="Admin Profile Image" class="icon">
+                <h4 class="avatar-text">ADMIN</h4>
+            </div>
+            <div class="menu-select">
+                <a href="{{url_for('admin_dash')}}">
+                    <h4 class="menu-opt">DASHBOARD</h4>
+                </a>
+                <a href="{{url_for('admin')}}">
+                    <h4 class="menu-opt" id="selected">UPCOMING</h4>
+                </a>
+            </div>
+        </div>
+
+            <div class="grid" id="dashboard">
+                <div class="row">
+                    <a href="{{url_for('checklist_dash')}}" class="dash-link">
+                        <div class="dash-overlay">
+                            <div class="item" id="pic1">
+                                <div class="dash-list">Daily Checklist</div>
+                                <div class="remaining">{{rem}} remaining</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{url_for('checklist_dash_weekly')}}">
+                        <div class="dash-overlay">
+                            <div class="item" id="pic2">
+                                <div class="dash-list">Weekly Checklist</div>
+                                <div class="remaining">{{totalc}} items left to check </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="{{url_for('checklist_month')}}">
+                        <div class="dash-overlay">
+                            <div class="item" id="pic3">
+                                <div class="dash-list">Monthly Checklist</div>
+                                <div class="remaining">{{monrem}} remaining</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{url_for('admin_task')}}" class="dash-link">
+                        <div class="dash-overlay">
+                            <div class="item" id="pic4">
+                                <div class="dash-list">Tasks</div>
+                                <div class="remaining">{{taskrem}} remaining</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="{{url_for('rec_expense_dash')}}">
+                    <div class="button" id="expense-button">
+                        <div class="button-text" id="expense-button-text">Record Expense</div>
+                    </div>
+                </a>
+            </div>   
+      </div>
+            
+        <div class="expense-detail">
+            <table class="contact-table">
+                <tr>
+                    <td>
+                        <h3>Vendor list</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vendor 1</td>
+                    <td>Category</td>
+                    <td>+91##########</td>
+                </tr>
+                <tr>
+                    <td>Vendor 1</td>
+                    <td>Category</td>
+                    <td>+91##########</td>
+                </tr>
+                <tr>
+                    <td>Vendor 1</td>
+                    <td>Category</td>
+                    <td>+91##########</td>
+                </tr>
+                <tr>
+                    <td>Vendor 1</td>
+                    <td>Category</td>
+                    <td>+91##########</td>
+                </tr>
+                <a href="{{url_for('admin_dash')}}">
+                    <div class="button" id="close">Close</div>
+                </a>
+        </div>
+    </div>
+</body>
+</html>
